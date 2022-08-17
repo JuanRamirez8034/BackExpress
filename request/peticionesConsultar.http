@@ -1,0 +1,153 @@
+@api = http://localhost:2000
+
+### consulta todas personas
+GET {{api}}
+
+### datos inicio sesion
+POST {{api}}/usuarios/consulta-inicio-sesion
+Content-Type: application/json
+
+{
+    "usuario" : "Sther2000",
+    "contrasena" : "12345789"
+}
+
+### consulta datos persona_idPersona
+GET {{api}}/personas/consulta-datos
+Content-Type: application/json
+
+{
+    "sesion" : true,
+    "idSesion" : "3"
+}
+
+### consulta ingresos por tipo Mensual/ Anual
+POST {{api}}/ingresos/consulta
+Content-Type: application/json
+
+{
+    "sesion" : true,
+    "idSession" : "3",
+    "tipo": "Anual", 
+    "fecha": "2022-08-27"
+}
+
+### consulta ingresos por rango
+POST {{api}}/ingresos/consulta/rango
+Content-Type: application/json
+
+{
+    "sesion" : true,
+    "idSession" : "7",
+    "fechaInicio": "2022-09-16",
+    "fechaFin": "2022-09-18"
+}
+
+### consulta egresos (Si no se pasa fechaInicio-fechaFin obtiene todos los ingresos)
+POST {{api}}/egresos/consulta
+Content-Type: application/json
+
+{
+    "sesion" : true,
+    "idSesion" : 4,
+    "rangoInicio": "2022-07-01",
+    "rangoFin": "2022-07-18"
+}
+
+### consulta proyecto
+POST {{api}}/proyectos/consulta
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion" : "17"
+}
+
+### consulta proyecto_tags
+GET {{api}}/proyecto-tags/consulta
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idProyecto" : "8"
+}
+
+### consulta recordatorio  // si se agregan solo dos datos, la consulta trae todos los recordatorios
+POST {{api}}/recordatorios/consulta
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion" : "10"
+}
+
+### consulta recordatorio-tag
+GET {{api}}/recordatorio-tags/consulta
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idRecordatorio": "5"
+}
+
+### consulta recordatorio-tag
+GET {{api}}/tags/consulta
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idTag": "5"
+}
+
+### consulta actividad
+POST {{api}}/actividades/consulta
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion" : 10,
+    "idProyecto" : "3"
+}
+
+### consulta nota
+GET {{api}}/notas/consulta
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idActividad" : "3"
+}
+
+### Consulta tareas diarias
+POST {{api}}/consultas/tareasDiarias
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSession": 7,
+    "fechaFin" : "2022-08-25",
+    "estado": 1
+}
+
+
+### Consulta movimientos ingresos/egresos
+POST {{api}}/consultas/consultaMovimientos
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSession": 4,
+    "fechaInicio" : "2022-06-23",
+    "fechaFin" : "2022-06-27",
+    "tipo": "Rango"
+}
+
+### Consulta monto total movimientos ingresos/egresos
+POST {{api}}/consultas/consultaMontoTotalMovimientos
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSession": 4,
+    "fecha":"2022-06-10"
+}

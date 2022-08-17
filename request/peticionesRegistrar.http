@@ -1,0 +1,130 @@
+@api = http://localhost:2000
+
+###
+GET {{api}}/personas
+
+###registrar persona
+POST {{api}}/personas/registro
+Content-Type: application/json
+
+{
+    "nombrePersona" : "Sther",
+    "apellidoPersona" : "Salazar",
+    "fechaNacimiento" : "2000-12-13",
+    "usuario" : "sther-asr4",
+    "correo" : "sther4@gmail.com",
+    "contrasena" : "Fulanita1"
+}
+
+###registrar proyecto
+POST {{api}}/proyectos/registro
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": 10,
+    "descripcion":"App Movil",
+    "monto":"5000",
+    "fechaInicio":"2022-03-12", 
+    "fechaFin":"2022-09-25",
+    "estado":"Activo"
+}
+
+####registrar proyecto_tag
+POST {{api}}/proyecto-tags/registro
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": 3,
+    "descripcion" : "Una descripcion cualquiera x1"
+}
+
+####registrar tag
+POST {{api}}/tags/registro
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": 3,
+    "descripcion" : "Una descripcion cualquiera"
+}
+
+###registrar actividad
+POST {{api}}/actividades/registro
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": 10,
+    "descripcion":"Mostrar la app",
+    "fechaInicio":"2022-09-15", 
+    "fechaFin":"2022-09-25",
+    "estado":"1",
+    "proyecto_idProyecto" :"3"
+}
+
+###registrar nota
+POST {{api}}/notas/registro
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": 1,
+    "descripcion":"Pagina Web lorem ipsum x2",
+    "actividad_idActividad" : "5"
+}
+
+###registrar relacion recordatorio tag
+POST {{api}}/recordatorio-tags/registro
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": 1,
+    "tag_idTag":"5", 
+    "recordatorio_idRecordatorio":"5"
+}
+
+###registrar recordatorio
+POST {{api}}/recordatorios/registro
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": 3,
+    "descripcion":"Pasear el perro", 
+    "fechaInicio":"2022-08-25", 
+    "fechaFin":"2022-08-25", 
+    "estado":"Abandonado"
+}
+
+
+###registrar ingreso
+POST {{api}}/ingresos/registro
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": 3,
+    "motivo" : "Proyecto de programacion 1" , 
+    "monto" : "30" , 
+    "fecha" : "2022-09-16" , 
+    "persona_idPersona" : "18",
+    "proyecto_idProyecto" : "8"
+}
+
+###registrar egreso
+POST {{api}}/egresos/registro
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": 3,
+    "motivo" : "Compra combustible" , 
+    "monto" : "20" , 
+    "fecha" : "2022-08-19" , 
+    "persona_idPersona" : "3"
+}
+
+

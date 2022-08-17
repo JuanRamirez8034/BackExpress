@@ -1,0 +1,175 @@
+@api = http://localhost:2000
+
+###
+PUT {{api}}/personas/actualizar
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSession": 1,
+    "nombrePersona":"NuevoNombre",
+    "apellidoPersona":"NuevoApellido",
+    "fechaNacimiento":"2005-10-03"
+}
+
+###
+PUT {{api}}/usuarios/actualizar
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": "3",
+    "usuario":"Sther2000",
+    "contrasena":"Aa123456789*",
+    "correo": "nuevoCorre@gmail.con"
+}
+
+###
+PUT {{api}}/actualizar-contrasena-usuario
+Content-Type: application/json
+
+{
+    "contrasena":"123456789",
+    "correo": "nuevoCorre@gmail.con"
+}
+
+###
+PUT {{api}}/actualizar-ingreso
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": "1",
+    "motivo":"Nuevo motivo",
+    "monto": 23.4,
+    "fecha":"2020-10-13",
+    "idIngreso":"7"
+}
+
+###
+PUT {{api}}/egresos/actualizar
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": "18",
+    "motivo":"Nuevo motivo",
+    "monto": 23.4,
+    "fecha":"2020-10-13",
+    "idEgreso":"6"
+}
+
+###
+PUT {{api}}/actualizar-recordatorio
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": "18",
+    "descripcion":"Nuevo motivo para recordar",
+    "fechaInicio":"2020-10-13",
+    "fechaFin":"2020-10-13",
+    "estado": "terminado",
+    "idRecordatorio":"5"
+}
+
+###
+PUT {{api}}/actualizar-recordatorio-tag
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": "18",
+    "tag_idTag": "5",
+    "idRecordatorio":"1",
+    "idRecordatorioTag":"3"
+}
+
+###
+PUT {{api}}/actualizar-tag
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": "18",
+    "descripcion":"Otra descripcion cualquiera",
+    "idTag": "5"
+}
+
+###
+PUT {{api}}/proyectos/actualizar
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": "3",
+    "descripcion":"Nuevo motivo para proyecto",
+    "monto":3000,
+    "fechaInicio":"2020-07-12",
+    "fechaFin":"2020-07-13",
+    "estado": "Abandonado",
+    "idProyecto":"6"
+}
+
+###
+PUT {{api}}/actualizar-proyecto-tag
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": "18",
+    "idTag":"1",
+    "idProyecto":"9",
+    "idProyectoTag":"5"
+}
+
+###
+PUT {{api}}/actividades/actualizar
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": "10",
+    "descripcion":"Nuevo motivo para Actividad",
+    "fechaInicio":"2020-10-13",
+    "fechaFin":"2020-10-13",
+    "estado": "0",
+    "idActividad":"6",
+    "idProyecto":"8"
+}
+
+###
+PUT {{api}}/notas/actualizar
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": "18",
+    "descripcion":"Nuevo motivo para nota",
+    "idActividad":"3",
+    "idNota":"2"
+}
+
+### Actualizar estado de las tareas diarias //"Actividad"/"Recordatorio"
+PUT {{api}}/consultas/actualizarEstado
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSession": 4,
+    "id": "24",
+    "tipo": "Recordatorio",
+    "estado": "Activo"
+}
+
+### Actualizar perfil 
+POST {{api}}/consultas/actualizar/perfil
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSession": 10,
+    "nombrePersona": "Petra",
+    "usuario": "juan",
+    "correo": "petraperez@hotmail.com"
+}

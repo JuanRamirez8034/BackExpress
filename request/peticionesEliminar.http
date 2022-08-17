@@ -1,0 +1,115 @@
+@api = http://localhost:2000
+
+###
+DELETE {{api}}/eliminar-persona
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": "15"
+}
+
+###
+DELETE {{api}}/eliminar-usuario
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": "18",
+    "correo": "Enmanuell@gmail.com",
+    "contrasena": "1234567890"
+}
+
+###
+DELETE {{api}}/eliminar-ingreso
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": 18,
+    "idIngreso": 20
+}
+
+###
+DELETE {{api}}/egresos/eliminar
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": 18,
+    "idEgreso": 6
+}
+
+###
+DELETE {{api}}/recordatorios/eliminar
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": 7,
+    "idRecordatorio": 6
+}
+
+###
+DELETE {{api}}/eliminar-recordatorio-tag
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": 18,
+    "idRecordatorioTag": 3,
+    "idRecordatorio": 1
+}
+
+###
+DELETE {{api}}/eliminar-tag
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": 18,
+    "idTag": 8
+}
+
+###
+DELETE {{api}}/proyectos/eliminar
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": "7",
+    "idProyecto": "5"
+}
+
+###
+DELETE {{api}}/eliminar-proyecto-tag
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": 1,
+    "idProyectoTag": 7,
+    "idProyecto": 9
+}
+
+###
+DELETE {{api}}/actividades/eliminar
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": 1,
+    "idActividad": 5,
+    "idProyecto": 9
+}
+
+###
+DELETE {{api}}/eliminar-nota
+Content-Type: application/json
+
+{
+    "sesion": true,
+    "idSesion": 1,
+    "idNota":4,
+    "idActividad": 5
+}
